@@ -2,7 +2,7 @@ trigger:
 - master
 
 pool:
-  name: Pool1
+  name: Default
 
 stages:
 - stage: Build_Stage
@@ -32,9 +32,10 @@ stages:
         packagesToPack: '**/*.csproj'
         versioningScheme: 'off'
     
+
     - task: DotNetCoreCLI@2
       inputs:
         command: 'push'
         packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
         nuGetFeedType: 'internal'
-        publishVstsFeed: '77fda57e-5402-4efb-8d1b-7eb94d19203d'
+        publishVstsFeed: 'ac8df928-779c-4485-b69f-8ebc105dd96a'
