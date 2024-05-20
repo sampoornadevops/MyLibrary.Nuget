@@ -33,9 +33,9 @@ stages:
         versioningScheme: 'off'
     
 
-    - task: NuGetCommand@2
+    - task: DotNetCoreCLI@2
       inputs:
-        command: 'push'
-        packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
-        nuGetFeedType: 'internal'
-        publishVstsFeed: '3fc6faed-8e1d-4437-883e-7c40ff1e3ab5/342723ae-7506-4388-a3a6-415924c8b251'
+       command: 'push'
+       packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
+       nuGetFeedType: 'internal'
+       publishVstsFeed: '4d17cf7b-49d2-48a8-b8fc-d00c842f9cb7'
